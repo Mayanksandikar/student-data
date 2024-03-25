@@ -14,7 +14,7 @@ const handelSubmit = async(e) => {
   e.preventDefault();
 
   const addUser = {name , email , password}
-  const response = await fetch("http://localhost:5000/teachers/signup" , {
+  const response = await fetch("https://api-database-zvhj.vercel.app/teachers/signup" , {
     method:"POST",
     body:JSON.stringify(addUser),
     headers:{

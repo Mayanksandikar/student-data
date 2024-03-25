@@ -13,7 +13,7 @@ const ReadStudent = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/students");
+      const response = await fetch("https://api-database-zvhj.vercel.app/students");
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -32,7 +32,7 @@ const ReadStudent = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/students/${id}`, {
+      const response = await fetch(`https://api-database-zvhj.vercel.app/students/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
