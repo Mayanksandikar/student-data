@@ -29,7 +29,6 @@ const ReadStudent = () => {
   const addStudent = () => {
     navigate("/addstudent");
   };
-
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`https://api-database-sable.vercel.app/students/${id}`, {
@@ -47,7 +46,6 @@ const ReadStudent = () => {
       setError(error.message);
     }
   };
-
   const filteredData = data.filter((student) =>
     student.name && student.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -96,15 +94,15 @@ const ReadStudent = () => {
                   {student.address}
                 </p>
                 <Link
-                  href="#"
-                  className="card-link"
-                  onClick={() => handleDelete(student._id)}
-                >
-                  Delete
-                </Link>
-                <Link to={`/${student._id}`} className="card-link">
-                  Edit
-                </Link>
+  href="#"
+  className="card-link"
+  onClick={() => handleDelete(student._id)}
+>
+  Delete
+</Link>
+<Link to={`/${student._id}`} className="card-link">
+  Edit
+</Link>
               </div>
             </div>
           </div>
