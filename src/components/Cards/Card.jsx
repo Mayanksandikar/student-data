@@ -17,10 +17,10 @@ const Card = () => {
     // const loginUser = { email, password };
 
     try {
-      const response = await fetch("https://api-database-zvhj.vercel.app/api/teachers/login", {
+      const response = await fetch("https://api-database-sable.vercel.app/teachers/login", {
     method: "POST",
     headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/JSON",
     },
     body: JSON.stringify({ email, password }),
 });
