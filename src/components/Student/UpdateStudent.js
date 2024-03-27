@@ -17,7 +17,7 @@ const UpdateStudent = () => {
 
     const getSingleUser = async ()=>{
         const response = await fetch(`https://api-database-sable.vercel.app/students/${id}`);
-        const result = await response.JSON();
+        const result = await response.json();
         if(!response.ok) {
             console.log(result.error); 
             setError(result.error);
@@ -44,7 +44,7 @@ const UpdateStudent = () => {
         e.preventDefault();
 
         const updatedUser = {name , email , phoneNo , rollNo ,address}
-        const response = await fetch(`https://api-database-sable.vercel.app/students${id} `, {
+        const response = await fetch(`https://api-database-sable.vercel.app/students/${id} `, {
             method:"PATCH",
             body:JSON.stringify(updatedUser),
             headers:{
