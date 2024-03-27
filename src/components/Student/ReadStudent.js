@@ -32,7 +32,7 @@ const ReadStudent = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://api-database-sable.vercel.app/students${id}`, {
+      const response = await fetch(`https://api-database-sable.vercel.app/students/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
