@@ -13,17 +13,25 @@ const ReadStudent = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("https://api-database-sable.vercel.app/students");
+      // Fetch data from the specified URL
+      const response = await fetch("https://api-database-sable.vercel.app/students/");
+  
+      // Check if the response is not OK (i.e., status code is not in the range 200-299)
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error('Failed to fetch data'); // Throw an error if the response is not OK
       }
+  
+      // Parse the JSON response
       const result = await response.json();
+  
+      // Set the data using the setData function
       setData(result);
     } catch (error) {
-      setError(error.message);
+      // Catch any errors that occur during the fetch or parsing
+      setError(error.message); // Set the error message using the setError function
     }
   };
-
+  
   const navigate = useNavigate();
 
   const addStudent = () => {
